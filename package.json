@@ -39,5 +39,6 @@
   },
   "devDependencies": {
     "@types/react-helmet": "^5.0.15"
-  }
+  },
+  "homepage": "https://iansan5653.github.io/reversi"
 }
