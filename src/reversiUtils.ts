@@ -127,3 +127,12 @@ export function getGameStatusWithValidMoves(
     )
   );
 }
+
+export function getScore(game: GameStatus): Record<Team, number> {
+  const result = {[b]: 0, [w]: 0};
+  game.forEach(row => row.forEach(cellStatus => {
+    if(cellStatus === b) result[b]++;
+    else if(cellStatus === w) result[w]++;
+  }));
+  return result;
+}

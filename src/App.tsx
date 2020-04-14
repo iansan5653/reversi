@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import "./App.css";
 import * as R from "./reversiUtils";
 
@@ -67,8 +68,12 @@ class App extends React.Component<{}, AppState> {
       this.state.gameStatus,
       this.state.currentTeam
     );
+    const score = R.getScore(this.state.gameStatus);
     return (
       <div className="App" style={{ backgroundColor: this.state.currentTeam }}>
+        <Helmet>
+          <title>{`Reversi (B: ${score[R.b]}, W: ${score[R.w]})`}</title>
+        </Helmet>
         <Board>
           {statusesWithValid.map((row_statuses, row) =>
             row_statuses.map((square, column) => (
