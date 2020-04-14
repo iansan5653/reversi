@@ -1,0 +1,33 @@
+.Piece {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.Square {
+  padding: 10%;
+  border: 2px solid darkgreen;
+  box-sizing: border-box;
+}
+
+.Square.valid {
+  cursor: pointer;
+  background-color: rgba(255,255,255, 0.2);
+}
+
+.Square.valid:hover {
+  background-color: rgba(255,255,255, 0.5);
+}
+
+.Board {
+  height: min(100vh, 100vw);
+  width: min(100vh, 100vw);
+  background-color: green;
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(8, 1fr);
+  box-sizing: border-box;
+  margin: auto;
+  border: 3px solid darkgreen;
+}
