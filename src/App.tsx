@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
-import * as RU from "./reversiUtils";
+import * as R from "./reversiUtils";
 
-const Piece = ({ team }: { team: RU.Team }) => (
+const Piece = ({ team }: { team: R.Team }) => (
   <div className="Piece" style={{ backgroundColor: team }} />
 );
 
@@ -11,41 +11,44 @@ const Square = ({
   location,
   onClick,
 }: {
-  status: RU.StatusOrValid;
-  location: RU.Coordinates;
-  onClick: (location: RU.Coordinates) => void;
-}) => (
-  <div onClick={() => onClick(location)} className={`Square ${status}`}>
-    {(status === RU.b || status === RU.w) && <Piece team={status} />}
-  </div>
-);
+  status: R.StatusOrValid;
+  location: R.Coordinates;
+  onClick: (location: R.Coordinates) => void;
+}) =>
+  status === "valid" ? (
+    <button onClick={() => onClick(location)} className={`Square valid`} />
+  ) : (
+    <div className={`Square`}>
+      {(status === R.b || status === R.w) && <Piece team={status} />}
+    </div>
+  );
 
 const Board = ({ children }: { children: React.ReactNode }) => (
   <div className="Board">{children}</div>
 );
 
 interface AppState {
-  gameStatus: RU.GameStatus;
-  currentTeam: RU.Team;
+  gameStatus: R.GameStatus;
+  currentTeam: R.Team;
 }
 
 class App extends React.Component<{}, AppState> {
   state: AppState = {
-    gameStatus: RU.copyGame(RU.gameSetup),
-    currentTeam: RU.b,
+    gameStatus: R.copyGame(R.gameSetup),
+    currentTeam: R.b,
   };
 
-  private attemptMove = (location: RU.Coordinates) => {
-    const cellStatus = RU.getStatusAt(this.state.gameStatus, location);
-    if (cellStatus === RU.x) {
-      const wouldBeFlipped = RU.collectFlippedByMove(
+  private attemptMove = (location: R.Coordinates) => {
+    const cellStatus = R.getStatusAt(this.state.gameStatus, location);
+    if (cellStatus === R.x) {
+      const wouldBeFlipped = R.collectFlippedByMove(
         this.state.gameStatus,
         location,
         this.state.currentTeam
       );
 
       if (wouldBeFlipped.length > 0) {
-        const grid = RU.copyGame(this.state.gameStatus);
+        const grid = R.copyGame(this.state.gameStatus);
 
         [location, ...wouldBeFlipped].forEach(
           (cell) => (grid[cell.row][cell.column] = this.state.currentTeam)
@@ -53,14 +56,14 @@ class App extends React.Component<{}, AppState> {
 
         this.setState({
           gameStatus: grid,
-          currentTeam: RU.getOtherTeam(this.state.currentTeam),
+          currentTeam: R.getOtherTeam(this.state.currentTeam),
         });
       }
     }
   };
 
   public render(): React.ReactNode {
-    const statusesWithValid = RU.getGameStatusWithValidMoves(
+    const statusesWithValid = R.getGameStatusWithValidMoves(
       this.state.gameStatus,
       this.state.currentTeam
     );
