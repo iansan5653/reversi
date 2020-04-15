@@ -1,0 +1,9 @@
+{
+  "short_name": "Reversi",
+  "name": "Simple Reversi Game",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#008000",
+  "background_color": "#ffffff"
+}
