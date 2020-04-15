@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.4d4dead2.chunk.css",
-    "main.js": "/static/js/main.6f93e1f8.chunk.js",
-    "main.js.map": "/static/js/main.6f93e1f8.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.89faf190.js",
-    "runtime-main.js.map": "/static/js/runtime-main.89faf190.js.map",
-    "static/js/2.079001f4.chunk.js": "/static/js/2.079001f4.chunk.js",
-    "static/js/2.079001f4.chunk.js.map": "/static/js/2.079001f4.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.3e1d880a18f98f2934777f68ba6c8553.js": "/precache-manifest.3e1d880a18f98f2934777f68ba6c8553.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.4d4dead2.chunk.css.map": "/static/css/main.4d4dead2.chunk.css.map",
-    "static/js/2.079001f4.chunk.js.LICENSE.txt": "/static/js/2.079001f4.chunk.js.LICENSE.txt"
+    "main.css": "/reversi/static/css/main.4d4dead2.chunk.css",
+    "main.js": "/reversi/static/js/main.fcda65bf.chunk.js",
+    "main.js.map": "/reversi/static/js/main.fcda65bf.chunk.js.map",
+    "runtime-main.js": "/reversi/static/js/runtime-main.b8a59652.js",
+    "runtime-main.js.map": "/reversi/static/js/runtime-main.b8a59652.js.map",
+    "static/js/2.079001f4.chunk.js": "/reversi/static/js/2.079001f4.chunk.js",
+    "static/js/2.079001f4.chunk.js.map": "/reversi/static/js/2.079001f4.chunk.js.map",
+    "index.html": "/reversi/index.html",
+    "precache-manifest.81d7ec6e1ef9a057969051857729d532.js": "/reversi/precache-manifest.81d7ec6e1ef9a057969051857729d532.js",
+    "service-worker.js": "/reversi/service-worker.js",
+    "static/css/main.4d4dead2.chunk.css.map": "/reversi/static/css/main.4d4dead2.chunk.css.map",
+    "static/js/2.079001f4.chunk.js.LICENSE.txt": "/reversi/static/js/2.079001f4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.89faf190.js",
+    "static/js/runtime-main.b8a59652.js",
     "static/js/2.079001f4.chunk.js",
     "static/css/main.4d4dead2.chunk.css",
-    "static/js/main.6f93e1f8.chunk.js"
+    "static/js/main.fcda65bf.chunk.js"
   ]
 }
